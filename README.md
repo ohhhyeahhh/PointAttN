@@ -47,8 +47,8 @@ The dataset used in our experiments are [PCN](https://www.shapenet.org/) and [Co
 [Completion3D](https://completion3d.stanford.edu/)
 
 The pretrained models on Completion3D and PCN dataset are available as follows:
-[PCN](链接：https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) 提取码：kmju
-[Completion3D](链接：https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) 提取码：nf0m
+[PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) 提取码：kmju
+[Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) 提取码：nf0m
 
 
 ## [License]
