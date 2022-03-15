@@ -42,7 +42,7 @@ python test_pcn.py -c PointAttN.yaml
 
 ### Dataset
 
-The dataset used in our experiments are [PCN](https://www.shapenet.org/) and [Compeletion3D](http://completion3d.stanford.edu/) and is available below:
+The dataset used in our experiments are PCN and Compeletion3D and is available below:
 [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
 [Completion3D](https://completion3d.stanford.edu/)
 
