@@ -19,14 +19,7 @@ Install dependencies:
 cd ChamferDistancePytorch
 python setup.py install
 
-2. [emd, expansion_penalty](https://github.com/Colin97/MSN-Point-Cloud-Completion) or
-
-cd EMD
-python setup.py install
-cd expansion_penalty
-python setup.py install
-
-3. [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion) or
+2. [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion) or
 
 cd mm3d_pn2
 python setup.py build_ext --inplace
@@ -47,8 +40,8 @@ The dataset used in our experiments are PCN and Compeletion3D and is available b
 [Completion3D](https://completion3d.stanford.edu/)
 
 The pretrained models on Completion3D and PCN dataset are available as follows:
-[PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) 提取码：kmju
-[Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) 提取码：nf0m
+[PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) code：kmju
+[Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) code：nf0m
 
 
 ## [Acknowledgement]
