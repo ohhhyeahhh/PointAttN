@@ -9,14 +9,15 @@ import transforms3d
 import random
 from tensorpack import dataflow
 
+
 class PCN_pcd(data.Dataset):
-    def __init__(self, prefix="train"):
+    def __init__(self, path, prefix="train"):
         if prefix=="train":
-            self.file_path = '/data0/guodongyan/completion_dataset//ShapeNetCompletion/train'
+            self.file_path = os.path.join(path,'train') 
         elif prefix=="val":
-            self.file_path = '/data0/guodongyan/completion_dataset//ShapeNetCompletion/val'
+            self.file_path = os.path.join(path,'val')  
         elif prefix=="test":
-            self.file_path = '/data0/guodongyan/completion_dataset//ShapeNetCompletion/test'
+            self.file_path = os.path.join(path,'test') 
         else:
             raise ValueError("ValueError prefix should be [train/val/test] ")
 
@@ -154,13 +155,13 @@ class PCN_pcd(data.Dataset):
 
 
 class C3D_h5(data.Dataset):
-    def __init__(self, prefix="train"):
+    def __init__(self, path, prefix="train"):
         if prefix=="train":
-            self.file_path = '/data0/guodongyan/completion_dataset/c3d/shapenet/train'
+            self.file_path = os.path.join(path,'train') 
         elif prefix=="val":
-            self.file_path = '/data0/guodongyan/completion_dataset/c3d/shapenet/val'
+            self.file_path = os.path.join(path,'val')  
         elif prefix=="test":
-            self.file_path = '/data0/guodongyan/completion_dataset/c3d/shapenet/test'
+            self.file_path = os.path.join(path,'test') 
         else:
             raise ValueError("ValueError prefix should be [train/val/test] ")
 
