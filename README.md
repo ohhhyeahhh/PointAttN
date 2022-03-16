@@ -51,11 +51,6 @@ The pretrained models on Completion3D and PCN dataset are available as follows:
 [Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) 提取码：nf0m
 
 
-## [License]
-
-Our code is released under MIT License.
-
-
 ## [Acknowledgement]
 
 1. We include the following PyTorch 3rd-party libraries:  
