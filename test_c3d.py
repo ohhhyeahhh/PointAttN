@@ -24,7 +24,7 @@ def save_obj(point, path):
     f.close()
 
 def test():
-    dataset_test = C3D_h5(prefix="test")
+    dataset_test = C3D_h5(args.c3dpath, prefix="test")
     dataloader_test = torch.utils.data.DataLoader(dataset_test, batch_size=args.batch_size,
                                                   shuffle=False, num_workers=1)
     dataset_length = len(dataset_test)

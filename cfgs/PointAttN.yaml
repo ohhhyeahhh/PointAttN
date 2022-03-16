@@ -2,7 +2,7 @@ batch_size: 2
 workers: 2
 nepoch: 400
 model_name: PointAttN
-load_model:  /home/guodongyan/PycharmProjects/WJ/PointAttn/log/PointAttN_cd_debug_c3d/model_pcn_new.pth
+load_model:  ./log/PointAttN_cd_debug_pcn/model_pcn_new.pth
 start_epoch: 0
 num_points: 2048
 work_dir: log/
@@ -24,7 +24,9 @@ optimizer: Adam
 weight_decay: 0
 betas: 0.9, 0.999
 
-device: '5'
+device: '0'
 dataset: 'pcn'
+pcnpath: $PATH/ShapeNetCompletion
+c3dpath: $PATH/shapenet
 # test
 save_vis: False

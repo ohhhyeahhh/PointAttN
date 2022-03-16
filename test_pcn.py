@@ -24,7 +24,7 @@ def save_obj(point, path):
     f.close()
 
 def test():
-    dataset_test = PCN_pcd(prefix="test")
+    dataset_test = PCN_pcd(args.pcnpath, prefix="test")
     dataloader_test = torch.utils.data.DataLoader(dataset_test, batch_size=args.batch_size,
                                                   shuffle=False, num_workers=int(args.workers))
     dataset_length = len(dataset_test)

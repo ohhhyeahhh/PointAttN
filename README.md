@@ -29,7 +29,7 @@ python setup.py install
 3. [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion) or
 
 cd mm3d_pn2
-python setup.py install
+python setup.py build_ext --inplace
 
 ### Train
 

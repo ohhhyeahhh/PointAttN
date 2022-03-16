@@ -22,11 +22,11 @@ def train():
     val_loss_meters = {m: AverageValueMeter() for m in metrics}
 
     if args.dataset == 'pcn':
-        dataset = PCN_pcd(prefix="train")
-        dataset_test = PCN_pcd(prefix="test")
+        dataset = PCN_pcd(args.pcnpath, prefix="train")
+        dataset_test = PCN_pcd(args.pcnpath, prefix="test")
     elif args.dataset == 'c3d':
-        dataset = C3D_h5(prefix="train")
-        dataset_test = C3D_h5_CRN(prefix="val")
+        dataset = C3D_h5(args.c3dpath, prefix="train")
+        dataset_test = C3D_h5_CRN(args.c3dpath, prefix="val")
     else:
         raise ValueError('dataset is not exist')
     dataloader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size,
