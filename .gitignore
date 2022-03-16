@@ -29,6 +29,8 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.ninja_deps
+*.ninja_log
 MANIFEST
 
 # PyInstaller
