@@ -21,7 +21,24 @@ cd $PointAttN_Home/utils/mm3d_pn2
 python setup.py build_ext --inplace
 ```
 
-## 2. Test
+## 2. Train
+
+### Prepare training datasets
+
+Download the datasets:
+
++ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
++ [Completion3D](https://completion3d.stanford.edu/)
+
+### Train a model
+
+To train the PointAttN model, modify the dataset path in `cfgs/PointAttN.yaml `, run:
+
+```
+python train.py -c PointAttN.yaml
+```
+
+## 3. Test
 
 ### Pretrained models
 
@@ -46,23 +63,6 @@ To test PointAttN on Completion3D benchmark, download  the pretrained model and 
 python test_c3d.py -c PointAttN.yaml
 ```
 
-## 3. Train
-
-### Prepare training datasets
-
-Download the datasets:
-
-+ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
-+ [Completion3D](https://completion3d.stanford.edu/)
-
-### Train a model
-
-To train PointAttN, modify the dataset path in `cfgs/PointAttN.yaml `, run:
-
-```
-python train.py -c PointAttN.yaml
-```
-
 ## 4. Acknowledgement
 
 1. We include the following PyTorch 3rd-party libraries:  
@@ -83,8 +83,4 @@ If you use PointAttN in your work, please cite our paper:
   year={2022}
 }
 ```
-
-
-
-2. 
 
