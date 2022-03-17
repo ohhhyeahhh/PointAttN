@@ -27,8 +27,9 @@ python setup.py build_ext --inplace
 ### Dataset
 
 The benchmarks of [PCN](https://www.shapenet.org/) and [Compeletion3D](http://completion3d.stanford.edu/) are available below:
-[PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
-[Completion3D](https://completion3d.stanford.edu/)
+
++ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
++ [Completion3D](https://completion3d.stanford.edu/)
 
 
 
@@ -45,8 +46,9 @@ python train.py -c PointAttN.yaml
 ### Test
 
 The pretrained models on Completion3D and PCN dataset are available as follows:
-[PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) (code：kmju)
-[Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) (code：nf0m)
+
++ [PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) (code：kmju)
++ [Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) (code：nf0m)
 
 To test PointAttN on PCN benchmark, place the pretrained model with correct path and run test_pcn.py as the following command:
 
