@@ -21,10 +21,10 @@ python setup.py build_ext --inplace
 
 The pretrained models on Completion3D and PCN benchmark are available as follows:
 
-| dataset      |                             url                              | performance |
-| :----------- | :----------------------------------------------------------: | ----------- |
-| Completion3D | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m) | CD = 6.63   |
-| PCN          | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju) | CD = 6.86   |
+|   dataset    | performance |                             url                              |
+| :----------: | :---------: | :----------------------------------------------------------: |
+| Completion3D |  CD = 6.63  | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m) |
+|     PCN      |  CD = 6.86  | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju) |
 
 To test PointAttN on PCN benchmark, download  the pretrained model and put it into `PointAttN_cd_debug_pcn `directory, run:
 
