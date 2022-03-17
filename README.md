@@ -1,18 +1,13 @@
 # PointAttN
-### Installation
+### 1. Environment setup
 
-1. The project is implement in python 3.8.12, torch 1.9.0 and cuda 11.2
+This code has been tested on Ubuntu 16.04, python 3.8.12, torch 1.9.0 and cuda 11.2. Please install related libraries before running this code:
 
-2. please Install the related dependencies before run the code:
+```
+pip install -r requirements.txt
+```
 
-+ h5py 3.6.0
-+ matplotlib 3.4.3
-+ munch 2.5.0
-+ open3d 0.13.0
-+ PyTorch 1.9.0
-+ yaml 5.4.1
-
-3. please compile the [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch) for CD_Loss and compile the [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion) for other modules. Another way is using the following command:
+please compile Pytorch 3rd-party modules [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch) and mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion). A simple way is using the following command:
 
 ```
 cd $PointAttN_Home/utils/ChamferDistancePytorch/chamfer3D
@@ -22,49 +17,51 @@ cd $PointAttN_Home/utils/mm3d_pn2
 python setup.py build_ext --inplace
 ```
 
+### 2. Test
 
+The pretrained models on Completion3D and PCN benchmark are available as follows:
 
-### Dataset
+| dataset      |                             url                              | performance |
+| :----------- | :----------------------------------------------------------: | ----------- |
+| Completion3D | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m) | CD = 6.63   |
+| PCN          | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju) | CD = 6.86   |
 
-The benchmarks of [PCN](https://www.shapenet.org/) and [Compeletion3D](http://completion3d.stanford.edu/) are available below:
-
-+ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
-+ [Completion3D](https://completion3d.stanford.edu/)
-
-
-
-### Train
-
-To train PointAttN, place the dataset with correct path and run train.py as the following command:
-
-```
-python train.py -c PointAttN.yaml
-```
-
-
-
-### Test
-
-The pretrained models on Completion3D and PCN dataset are available as follows:
-
-+ [PCN](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g) (code：kmju)
-+ [Completion3D](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg) (code：nf0m)
-
-To test PointAttN on PCN benchmark, place the pretrained model with correct path and run test_pcn.py as the following command:
+To test PointAttN on PCN benchmark, download  the pretrained model and put it into `PointAttN_cd_debug_pcn `directory, run:
 
 ```
 python test_pcn.py -c PointAttN.yaml
 ```
 
-To test PointAttN on Completion3D benchmark, place the pretrained model with correct path and run test_pcn.py as the following command:
+To test PointAttN on Completion3D benchmark, download  the pretrained model and put it into `PointAttN_cd_debug_c3d `directory, run:
 
 ```
 python test_c3d.py -c PointAttN.yaml
 ```
 
+### 3. Train
 
+#### Dataset
 
-### Cite this work
+Down the datasets:
+
++ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
++ [Completion3D](https://completion3d.stanford.edu/)
+
+To train PointAttN, modify the dataset path in `cfgs/PointAttN.yaml `, run:
+
+```
+python train.py -c PointAttN.yaml
+```
+
+## 4. Acknowledgement
+
+1. We include the following PyTorch 3rd-party libraries:  
+   [1] [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch)  
+   [2] [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion)
+
+2. Some of the code of this project is borrowed from [VRC-Net](https://github.com/paul007pl/MVP_Benchmark)  
+
+### 5. Cite this work
 
 If you use PointAttN in your work, please cite our paper:
 
@@ -79,12 +76,5 @@ If you use PointAttN in your work, please cite our paper:
 
 
 
-
-## [Acknowledgement]
-
-1. We include the following PyTorch 3rd-party libraries:  
-   [1] [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch)  
-   [2] [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion)
-   
-2. Some of the code of this project is borrowed from [VRC-Net](https://github.com/paul007pl/MVP_Benchmark)  
+2. 
 
