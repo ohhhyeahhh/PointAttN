@@ -1,11 +1,15 @@
 # PointAttN
 ### 1. Environment setup
 
+#### Install related libraries
+
 This code has been tested on Ubuntu 16.04, python 3.8.12, torch 1.9.0 and cuda 11.2. Please install related libraries before running this code:
 
 ```
 pip install -r requirements.txt
 ```
+
+#### Compile Pytorch 3rd-party modules
 
 please compile Pytorch 3rd-party modules [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch) and [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion). A simple way is using the following command:
 
@@ -19,12 +23,16 @@ python setup.py build_ext --inplace
 
 ### 2. Test
 
+#### Pretrained models
+
 The pretrained models on Completion3D and PCN benchmark are available as follows:
 
 |   dataset    | performance |                          model link                          |
 | :----------: | :---------: | :----------------------------------------------------------: |
 | Completion3D |  CD = 6.63  | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m) |
 |     PCN      |  CD = 6.86  | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju) |
+
+#### Test for paper result
 
 To test PointAttN on PCN benchmark, download  the pretrained model and put it into `PointAttN_cd_debug_pcn `directory, run:
 
@@ -40,12 +48,14 @@ python test_c3d.py -c PointAttN.yaml
 
 ### 3. Train
 
-#### Dataset
+#### Prepare training datasets
 
-Down the datasets:
+Download the datasets:
 
 + [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
 + [Completion3D](https://completion3d.stanford.edu/)
+
+#### Train a model
 
 To train PointAttN, modify the dataset path in `cfgs/PointAttN.yaml `, run:
 
