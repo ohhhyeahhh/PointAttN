@@ -7,7 +7,7 @@ This code has been tested on Ubuntu 16.04, python 3.8.12, torch 1.9.0 and cuda 1
 pip install -r requirements.txt
 ```
 
-please compile Pytorch 3rd-party modules [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch) and mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion). A simple way is using the following command:
+please compile Pytorch 3rd-party modules [ChamferDistancePytorch](https://github.com/ThibaultGROUEIX/ChamferDistancePytorch) and [mm3d_pn2](https://github.com/Colin97/MSN-Point-Cloud-Completion). A simple way is using the following command:
 
 ```
 cd $PointAttN_Home/utils/ChamferDistancePytorch/chamfer3D
