@@ -3,7 +3,7 @@
 
 ### Install related libraries
 
-This code has been tested on Ubuntu 16.04, python 3.8.12, torch 1.9.0 and cuda 11.2. Please install related libraries before running this code:
+This code has been tested on Ubuntu 20.04, python 3.8.12, torch 1.9.0 and cuda 11.2. Please install related libraries before running this code:
 
 ```
 pip install -r requirements.txt
