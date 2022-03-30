@@ -11,7 +11,7 @@ import yaml
 import os
 import sys
 import argparse
-from dataset import C3D_h5, PCN_pcd, C3D_h5_CRN
+from dataset import C3D_h5, PCN_pcd
 
 
 def train():
@@ -35,7 +35,7 @@ def train():
                                                   shuffle=False, num_workers=int(args.workers))
     logging.info('Length of train dataset:%d', len(dataset))
     logging.info('Length of test dataset:%d', len(dataset_test))
-
+    
     if not args.manual_seed:
         seed = random.randint(1, 10000)
     else:
@@ -43,13 +43,13 @@ def train():
     logging.info('Random Seed: %d' % seed)
     random.seed(seed)
     torch.manual_seed(seed)
-
+    
     model_module = importlib.import_module('.%s' % args.model_name, 'models')
     net = torch.nn.DataParallel(model_module.Model(args))
     net.cuda()
     if hasattr(model_module, 'weights_init'):
         net.module.apply(model_module.weights_init)
-
+    
     lr = args.lr
     if args.lr_decay:
         if args.lr_decay_interval and args.lr_step_decay_epochs:
@@ -57,7 +57,7 @@ def train():
         if args.lr_step_decay_epochs:
             decay_epoch_list = [int(ep.strip()) for ep in args.lr_step_decay_epochs.split(',')]
             decay_rate_list = [float(rt.strip()) for rt in args.lr_step_decay_rates.split(',')]
-
+    
     optimizer = getattr(optim, args.optimizer)
     if args.optimizer == 'Adagrad':
         optimizer = optimizer(net.module.parameters(), lr=lr, initial_accumulator_value=args.initial_accum_val)
@@ -71,9 +71,9 @@ def train():
         ckpt = torch.load(args.load_model)
         net.module.load_state_dict(ckpt['net_state_dict'])
         logging.info("%s's previous weights loaded." % args.model_name)
-
+    
     for epoch in range(args.start_epoch, args.nepoch):
-
+    
         train_loss_meter.reset()
         net.module.train()
 
@@ -89,33 +89,33 @@ def train():
                 lr = max(lr, args.lr_clip)
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
-
+    
         for i, data in enumerate(dataloader, 0):
             optimizer.zero_grad()
-
+    
             _, inputs, gt = data
             # mean_feature = None
-
+    
             inputs = inputs.float().cuda()
             gt = gt.float().cuda()
             inputs = inputs.transpose(2, 1).contiguous()
-
+    
             out2, loss2, net_loss = net(inputs, gt)
-
+    
             train_loss_meter.update(net_loss.mean().item())
-
+    
             net_loss.backward(torch.squeeze(torch.ones(torch.cuda.device_count())).cuda())
-
+    
             optimizer.step()
-
+    
             if i % args.step_interval_to_print == 0:
                 logging.info(exp_name + ' train [%d: %d/%d]  loss_type: %s, fine_loss: %f total_loss: %f lr: %f' %
                              (epoch, i, len(dataset) / args.batch_size, args.loss, loss2.mean().item(), net_loss.mean().item(), lr))
-
+    
         if epoch % args.epoch_interval_to_save == 0:
             save_model('%s/network.pth' % log_dir, net)
             logging.info("Saving net...")
-
+    
         if epoch % args.epoch_interval_to_val == 0 or epoch == args.nepoch - 1:
             val(net, epoch, val_loss_meters, dataloader_test, best_epoch_losses)
 
@@ -130,7 +130,7 @@ def val(net, curr_epoch_num, val_loss_meters, dataloader_test, best_epoch_losses
         for i, data in enumerate(dataloader_test):
             label, inputs, gt = data
             # mean_feature = None
-
+    
             inputs = inputs.float().cuda()
             gt = gt.float().cuda()
             inputs = inputs.transpose(2, 1).contiguous()
@@ -138,7 +138,7 @@ def val(net, curr_epoch_num, val_loss_meters, dataloader_test, best_epoch_losses
             result_dict = net(inputs, gt, is_training=False)
             for k, v in val_loss_meters.items():
                 v.update(result_dict[k].mean().item())
-
+    
         fmt = 'best_%s: %f [epoch %d]; '
         best_log = ''
         for loss_type, (curr_best_epoch, curr_best_loss) in best_epoch_losses.items():
@@ -150,11 +150,11 @@ def val(net, curr_epoch_num, val_loss_meters, dataloader_test, best_epoch_losses
                 best_log += fmt % (loss_type, best_epoch_losses[loss_type][1], best_epoch_losses[loss_type][0])
             else:
                 best_log += fmt % (loss_type, curr_best_loss, curr_best_epoch)
-
+    
         curr_log = ''
         for loss_type, meter in val_loss_meters.items():
             curr_log += 'curr_%s: %f; ' % (loss_type, meter.avg)
-
+    
         logging.info(curr_log)
         logging.info(best_log)
 
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     if args.load_model:
         exp_name = os.path.basename(os.path.dirname(args.load_model))
         log_dir = os.path.dirname(args.load_model)
-
+    
     else:
         exp_name = args.model_name + '_' + args.loss + '_' + args.flag + '_' + args.dataset
         log_dir = os.path.join(args.work_dir, exp_name)
