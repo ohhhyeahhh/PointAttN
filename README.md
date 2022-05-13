@@ -46,8 +46,8 @@ The pretrained models on Completion3D and PCN benchmark are available as follows
 
 |   dataset    | performance |                          model link                          |
 | :----------: | :---------: | :----------------------------------------------------------: |
-| Completion3D |  CD = 6.63  | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m) |
-|     PCN      |  CD = 6.86  | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju) |
+| Completion3D |  CD = 6.63  | [[BaiDuYun](https://pan.baidu.com/s/17-BZr3QvHYjEVMjPuXHXTg)] (code：nf0m)[[GoogleDrive](https://drive.google.com/open?id=1uw0oJ731uLjDpZ82Gp7ILisjeOrNdiHK&authuser=wangjun5635%40gmail.com&usp=drive_fs)] |
+|     PCN      |  CD = 6.86  | [[BaiDuYun](https://pan.baidu.com/s/187GjKO2qEQFWlroG1Mma2g)] (code：kmju)[[GoogleDrive](https://drive.google.com/open?id=1uw0oJ731uLjDpZ82Gp7ILisjeOrNdiHK&authuser=wangjun5635%40gmail.com&usp=drive_fs)] |
 
 ### Test for paper result
 
