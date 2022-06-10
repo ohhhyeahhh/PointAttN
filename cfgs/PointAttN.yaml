@@ -1,4 +1,4 @@
-batch_size: 2
+batch_size: 32
 workers: 2
 nepoch: 400
 model_name: PointAttN
@@ -8,7 +8,7 @@ num_points: 2048
 work_dir: log/
 flag: debug
 loss: cd #cd
-manual_seed: 1748
+manual_seed: null # 1748
 step_interval_to_print: 100
 epoch_interval_to_save: 1
 epoch_interval_to_val: 1
