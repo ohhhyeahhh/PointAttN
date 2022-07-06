@@ -26,7 +26,7 @@ def train():
         dataset_test = PCN_pcd(args.pcnpath, prefix="test")
     elif args.dataset == 'c3d':
         dataset = C3D_h5(args.c3dpath, prefix="train")
-        dataset_test = C3D_h5_CRN(args.c3dpath, prefix="val")
+        dataset_test = C3D_h5(args.c3dpath, prefix="val")
     else:
         raise ValueError('dataset is not exist')
     dataloader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size,
