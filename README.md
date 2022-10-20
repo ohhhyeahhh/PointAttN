@@ -27,7 +27,8 @@ python setup.py build_ext --inplace
 
 Download the datasets:
 
-+ [PCN](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
++ [PCN(raw data)](https://drive.google.com/drive/folders/1P_W1tz5Q4ZLapUifuOE4rFAZp6L1XTJz)
++ [PCN(processed data)](https://gateway.infinitescript.com/?fileName=ShapeNetCompletion)
 + [Completion3D](https://completion3d.stanford.edu/)
 
 ### Train a model
