@@ -81,10 +81,11 @@ If you use PointAttN in your work, please cite our paper:
 
 ```
 @InProceedings{Wang_2024_AAAI,
- author = {Jun Wang, Ying Cui, Dongyan Guo, Junxia Li, Qingshan Liu, Chunhua Shen},
- title = {PointAttN: You Only Need Attention for Point Cloud Completion},
- booktitle = {Association for the Advancement of Artificial Intelligence (AAAI)},
- month = {Feb},
- year = {2024} }
+   author = {Jun Wang, Ying Cui, Dongyan Guo, Junxia Li, Qingshan Liu, Chunhua Shen},
+   title = {PointAttN: You Only Need Attention for Point Cloud Completion},
+   booktitle = {Association for the Advancement of Artificial Intelligence (AAAI)},
+   month = {Feb},
+   year = {2024}
+ }
 ```
 
