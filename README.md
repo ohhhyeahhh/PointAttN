@@ -77,11 +77,11 @@ python test_c3d.py -c PointAttN.yaml
 If you use PointAttN in your work, please cite our paper:
 
 ```
-@article{PointAttN,
-  title={PointAttN: You Only Need Attention for Point Cloud Completion},
-  author={Wang, Jun and Cui, Ying and Guo, Dongyan and Li, Junxia and Liu, Qingshan, and Shen, Chunhua},
-  journal={arXiv:2203.08485},
-  year={2022}
-}
+@InProceedings{Wang_2024_AAAI,
+ author = {Jun Wang, Ying Cui, Dongyan Guo, Junxia Li, Qingshan Liu, Chunhua Shen},
+ title = {PointAttN: You Only Need Attention for Point Cloud Completion},
+ booktitle = {Association for the Advancement of Artificial Intelligence (AAAI)},
+ month = {Feb},
+ year = {2024} }
 ```
 
