@@ -1,4 +1,7 @@
 # PointAttN
+
+News：Our paper has been accepted by AAAI-2024.
+
 ## 1. Environment setup
 
 ### Install related libraries
